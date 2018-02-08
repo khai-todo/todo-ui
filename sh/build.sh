@@ -1,1 +1,1 @@
-babel -d lib src/*.js $@
+babel -d lib src $@

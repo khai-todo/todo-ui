@@ -1,1 +1,2 @@
-babel -d lib src $@
+rm -rf lib
+babel --minified -s -d lib src $@

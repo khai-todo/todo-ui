@@ -40,6 +40,13 @@
     "preview": "bash 'sh/preview.sh'",
     "build": "bash 'sh/build.sh'"
   },
+  "standard": {
+    "env": {
+      "node": true,
+      "browser": true,
+      "jest": true
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khai-todo/todo-ui.git"

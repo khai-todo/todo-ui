@@ -1,3 +1,3 @@
-bash 'sh sh/test.sh' || exit $?
+bash 'sh/test.sh' || exit $?
 rm -rf lib
 babel --minified -s -d lib src $@

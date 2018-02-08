@@ -20,6 +20,8 @@ jest.config*
 /circle.yml
 /sh
 /coverage
+/src
+/preview
 docs
 yarn.lock
 package-lock.json

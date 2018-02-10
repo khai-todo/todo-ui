@@ -26,6 +26,7 @@ install:
   - cmd: IF %nodejs_version% EQU 0.8 set PATH=%APPDATA%\npm;%PATH%
   - cmd: npm -g install npm
   - cmd: IF %nodejs_version% NEQ 0.8 set PATH=%APPDATA%\npm;%PATH%
+  - cmd: node sh/install-peers.js
   - cmd: npm install
 
 test_script:

@@ -16,3 +16,6 @@ cache:
 
 before_script:
   - chmod -R +x sh
+
+before_install:
+  - node sh/install-peers.js

@@ -1,2 +1,2 @@
-bash 'sh/build.sh' || exit $?
+bash 'sh/babel.sh' || exit $?
 jest --coverage $@

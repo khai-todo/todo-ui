@@ -18,4 +18,4 @@ before_script:
   - chmod -R +x sh
 
 before_install:
-  - node sh/install-peers.js
+  - env YARN=true node sh/install-peers.js

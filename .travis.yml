@@ -16,6 +16,3 @@ cache:
 
 before_script:
   - chmod -R +x sh
-
-before_install:
-  - env YARN=true node sh/install-peers.js

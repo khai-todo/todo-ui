@@ -1,7 +1,9 @@
-const Nav = ({items, Link}) => <nav><ul>{
+const Nav = ({items, Link, Anchor}) => <nav><ul>{
   items.map(
-    ([href, content]) => <li>
-      <Link href={href}>{content}</Link>
+    ([href, content], index) => <li key={index}>
+      <Link href={href}>
+        <Anchor>{content}</Anchor>
+      </Link>
     </li>
   )
 }</ul></nav>

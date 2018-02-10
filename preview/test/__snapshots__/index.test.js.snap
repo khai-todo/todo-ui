@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly 1`] = `
+<nav>
+  <ul>
+    <li>
+      <a
+        href="/editor"
+        onClick={[Function]}
+      >
+        Editor
+      </a>
+    </li>
+    <li>
+      <a
+        href="/viewer"
+        onClick={[Function]}
+      >
+        Viewer
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

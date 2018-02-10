@@ -6,7 +6,8 @@ const model = ['Editor', 'Viewer']
 
 const Index = () => <Nav
   items={model}
-  Link={props => <NextLink prefetch {...props} />}
+  Link={props => <NextLink {...props} />}
+  Anchor='a'
 />
 
 export default Index

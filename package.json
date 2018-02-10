@@ -13,6 +13,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@types/react-test-renderer": "^16.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.2.2",
@@ -23,6 +24,7 @@
     "jest-cli": "^22.1.4",
     "js-yaml": "^3.10.0",
     "next": "^5.0.0",
+    "react-test-renderer": "^16.2.0",
     "regenerator-runtime": "^0.11.1",
     "standard": "^10.0.3",
     "x-iterable": "^6.0.1"

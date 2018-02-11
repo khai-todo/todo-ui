@@ -19,10 +19,9 @@ describe('when passing data', () => {
       it('should render alternate construct when it is provided', () => {
         const OnError = () => <output>
           <p>An Error occurred.</p>
-          <p><ul>
-            <li>key: {key}</li>
-            <li>val: {val}</li>
-          </ul></p>
+          <p><code><pre>{
+            '\n' + JSON.stringify({key, val}, undefined, 2) + '\n'
+          }</pre></code></p>
         </output>
 
         expect(

@@ -13,20 +13,27 @@ describe('when passing data', () => {
   }))
 
   describe('handle invalid data', () => invalid.forEach(({description, cases}) => {
-    const OnError = () => <output>
+    const createErrorComponent = object => () => <output>
       <p>An Error occurred.</p>
       <p><code><pre>{
-        '\n' + JSON.stringify({key, val}, undefined, 2) + '\n'
+        '\n' + JSON.stringify(object, undefined, 2) + '\n'
       }</pre></code></p>
     </output>
 
     describe(description, () => cases.forEach((x, i) => {
+      const OnError = createErrorComponent({
+        index: i,
+        subject: x
+      })
+
       it(`Case ${i}: ${JSON.stringify(x)}`, () => {
         expect(
           renderer.create(
             <Subject data={x} OnError={OnError} />
           ).toJSON()
-        ).toBe(<OnError />)
+        ).toBe(
+          renderer.create(<OnError />).toJSON()
+        )
       })
     }))
   }))

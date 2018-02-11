@@ -1,0 +1,30 @@
+- description: The whole doc is in wrong type
+  cases:
+    - null
+    - 123456
+    - abcdef
+    - [123, 456, 789]
+- description: Missing title
+  cases:
+    - content: Content
+- description: Invalid title
+  cases:
+    - title: []
+      content: Content
+    - title: {}
+      content: Content
+- description: Invalid children
+  cases:
+    - title: Title
+      children: {}
+    - title: Title
+      children: A String
+    - title: Title
+      children: 123
+- description: Invalid child item
+  cases:
+    - title: Title
+      children:
+        - title: Title
+          content: Content
+        - Invalid item which is a string instead of an object

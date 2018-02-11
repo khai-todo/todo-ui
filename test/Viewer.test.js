@@ -1,39 +1,33 @@
 import renderer from 'react-test-renderer'
 import Subject from '../src/Viewer'
 import snap from './lib/snapshot'
-import data from './lib/data'
+import * as data from './lib/data'
 
 it('empty rendering', () => snap(<Subject />))
 
 describe('when passing data', () => {
-  const {correct, ...incorrect} = data
+  const {valid, invalid} = data
 
-  it('accept correct data', () => snap(<Subject data={correct} />))
+  describe('accept valid data', () => valid.forEach(({description, value}) => {
+    it(description, () => snap(<Subject data={value} />))
+  }))
 
-  describe('that is incorrect', () => Object.entries(incorrect).forEach(([key, val]) => {
-    describe(`that came from ${key}.yaml`, () => {
-      it('should throw an error when no alternate construct is provided', () => {
-        expect(() => <Subject data={val} />).toThrow()
-      })
+  describe('handle invalid data', () => invalid.forEach(({description, cases}) => {
+    const OnError = () => <output>
+      <p>An Error occurred.</p>
+      <p><code><pre>{
+        '\n' + JSON.stringify({key, val}, undefined, 2) + '\n'
+      }</pre></code></p>
+    </output>
 
-      it('should render alternate construct when it is provided', () => {
-        const OnError = () => <output>
-          <p>An Error occurred.</p>
-          <p><code><pre>{
-            '\n' + JSON.stringify({key, val}, undefined, 2) + '\n'
-          }</pre></code></p>
-        </output>
-
+    describe(description, () => cases.forEach((x, i) => {
+      it(`Case ${i}: ${JSON.stringify(x)}`, () => {
         expect(
           renderer.create(
-            <Subject data={val} OnError={OnError} />
+            <Subject data={x} OnError={OnError} />
           ).toJSON()
-        ).toBe(
-          renderer.create(
-            <OnError />
-          ).toJSON()
-        )
+        ).toBe(<OnError />)
       })
-    })
+    }))
   }))
 })

@@ -1,0 +1,32 @@
+- description: Without children and content
+  value:
+    title: Title
+- description: Without children
+  value:
+    title: Title
+    content: Content
+- description: Nested x1
+  value:
+    title: Top
+    children:
+      - title: Bottom 1
+      - title: Bottom 2
+      - title: Bottom 3
+- description: Nested x2
+  value:
+    title: Top
+    children:
+      - title: Middle 1 — Simple
+      - title: Middle 2 — Has content
+        content: This is content of Middle 2
+      - title: Middle 3 — Has children
+        children:
+          - title: Bottom 3.1
+          - title: Bottom 3.2
+          - title: Bottom 3.3
+      - title: Middle 4 — Has content and children
+        content: This is content of Middle 4
+        children:
+          - title: Bottom 4.1
+          - title: Bottom 4.2
+          - title: Bottom 4.3

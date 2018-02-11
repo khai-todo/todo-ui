@@ -2,4 +2,10 @@
 
 exports[`empty rendering 1`] = `<div />`;
 
-exports[`when passing data accept correct data 1`] = `<div />`;
+exports[`when passing data accept valid data Nested x1 1`] = `<div />`;
+
+exports[`when passing data accept valid data Nested x2 1`] = `<div />`;
+
+exports[`when passing data accept valid data Without children 1`] = `<div />`;
+
+exports[`when passing data accept valid data Without children and content 1`] = `<div />`;

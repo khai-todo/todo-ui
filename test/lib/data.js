@@ -1,18 +1,11 @@
 import path from 'path'
-import {readFileSync, readdirSync} from 'fs'
+import {readFileSync} from 'fs'
 import * as yaml from 'js-yaml'
 
-const res = readdirSync(path.resolve(__dirname, 'data'))
-  .map(x => [
-    path.parse(x).name,
-    yaml.safeLoad(readFileSync(
-      path.resolve(__dirname, 'data', x),
-      'utf8'
-    ))
-  ])
-  .reduce(
-    (obj, [key, val]) => Object.assign(obj, {[key]: val}),
-    {}
-  )
+const get = name => yaml.safeLoad(readFileSync(
+  path.resolve(__dirname, 'data', `${name}.yaml`),
+  'utf8'
+))
 
-export default res
+export const valid = get('valid')
+export const invalid = get('invalid')

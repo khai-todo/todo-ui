@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty rendering 1`] = `<div />`;
+
+exports[`when passing data accept correct data 1`] = `<div />`;

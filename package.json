@@ -48,7 +48,7 @@
     "test": "bash 'sh/test.sh'",
     "preview": "bash 'sh/preview.sh'",
     "build": "bash 'sh/build.sh'",
-    "prepublish": "bash 'sh/test.sh'"
+    "prepublishOnly": "bash 'sh/test.sh'"
   },
   "standard": {
     "env": {

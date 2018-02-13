@@ -3,8 +3,6 @@ import Subject from '../src/Viewer'
 import snap from './lib/snapshot'
 import * as data from './lib/data'
 
-it('empty rendering', () => snap(<Subject />))
-
 describe('when passing data', () => {
   const {valid, invalid} = data
 

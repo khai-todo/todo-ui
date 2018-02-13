@@ -13,10 +13,6 @@ describe('when passing data', () => {
   describe('handle invalid data', () => {
     describe('without error handler', () => invalid.forEach(({description, cases}) => {
       cases.forEach((x, i) => {
-        it('throws an error', () => {
-          expect(() => <Subject data={x} />).toThrow()
-        })
-
         it('throws correct error message', () => {
           snap(() => <Subject data={x} />)
         })

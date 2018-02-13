@@ -18,11 +18,11 @@ export const snapshot = subject => {
       }
     })()
 
-    expect(JSON.stringify(value)).toMatchSnapshot()
+    expect(value).toMatchSnapshot()
   } else if (React.isValidElement(subject)) {
     expect(renderer.create(subject).toJSON()).toMatchSnapshot()
   } else {
-    expect(JSON.stringify(subject)).toMatchSnapshot()
+    expect(subject).toMatchSnapshot()
   }
 }
 

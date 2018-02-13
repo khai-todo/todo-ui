@@ -7,3 +7,170 @@ exports[`when passing data accept valid data Nested x2 1`] = `<div />`;
 exports[`when passing data accept valid data Without children 1`] = `<div />`;
 
 exports[`when passing data accept valid data Without children and content 1`] = `<div />`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 1`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={null}
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 2`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={123456}
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 3`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data="abcdef"
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 4`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Array [
+        123,
+        456,
+        789,
+      ]
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 5`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "content": "Content",
+      }
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 6`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "content": "Content",
+        "title": Array [],
+      }
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 7`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "content": "Content",
+        "title": Object {},
+      }
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 8`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "children": Object {},
+        "title": "Title",
+      }
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 9`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "children": "A String",
+        "title": "Title",
+      }
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 10`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "children": 123,
+        "title": "Title",
+      }
+    }
+  />,
+}
+`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 11`] = `
+Object {
+  "constructor": "Object",
+  "string": "[object Object]",
+  "typeof": "object",
+  "value": <Viewer
+    data={
+      Object {
+        "children": Array [
+          Object {
+            "content": "Content",
+            "title": "Title",
+          },
+          "Invalid item which is a string instead of an object",
+        ],
+        "title": "Title",
+      }
+    }
+  />,
+}
+`;

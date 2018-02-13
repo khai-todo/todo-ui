@@ -31,7 +31,7 @@ describe('when passing data', () => {
           renderer.create(
             <Subject data={x} OnError={OnError} />
           ).toJSON()
-        ).toBe(
+        ).toEqual(
           renderer.create(<OnError />).toJSON()
         )
       })

@@ -1,5 +1,5 @@
 'use strict'
-const main = require('./lib/test-spawn')
+import main from './lib/test-spawn'
 
 main({
   defaultExecutable: 'standard',

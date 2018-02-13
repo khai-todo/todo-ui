@@ -8,169 +8,75 @@ exports[`when passing data accept valid data Without children 1`] = `<div />`;
 
 exports[`when passing data accept valid data Without children and content 1`] = `<div />`;
 
+exports[`when passing data handle invalid data without error handler throws an error 1`] = `<div />`;
+
 exports[`when passing data handle invalid data without error handler throws correct error message 1`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={null}
-  />,
+  "error": [TypeError: Invalid type of data (data is null or undefined)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 2`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={123456}
-  />,
+  "error": [TypeError: Invalid type of data (typeof data !== 'object')],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 3`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data="abcdef"
-  />,
+  "error": [TypeError: Invalid type of data (typeof data !== 'object')],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 4`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Array [
-        123,
-        456,
-        789,
-      ]
-    }
-  />,
+  "error": [TypeError: Invalid type of data (data is an array)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 5`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "content": "Content",
-      }
-    }
-  />,
+  "error": [Error: Missing Field (title)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 6`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "content": "Content",
-        "title": Array [],
-      }
-    }
-  />,
+  "error": [Error: Invalid field (title: Provided value is not a string)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 7`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "content": "Content",
-        "title": Object {},
-      }
-    }
-  />,
+  "error": [Error: Invalid field (title: Provided value is not a string)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 8`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "children": Object {},
-        "title": "Title",
-      }
-    }
-  />,
+  "error": [Error: Invalid field (children: Provided value is neither falsy nor an array)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 9`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "children": "A String",
-        "title": "Title",
-      }
-    }
-  />,
+  "error": [Error: Invalid field (children: Provided value is neither falsy nor an array)],
 }
 `;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 10`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "children": 123,
-        "title": "Title",
-      }
-    }
-  />,
+  "error": [Error: Invalid field (children: Provided value is neither falsy nor an array)],
 }
 `;
 
-exports[`when passing data handle invalid data without error handler throws correct error message 11`] = `
+exports[`when passing data handle invalid data without error handler throws correct error message 11`] = `<div />`;
+
+exports[`when passing data handle invalid data without error handler throws correct error message 12`] = `
 Object {
-  "constructor": "Object",
-  "string": "[object Object]",
-  "typeof": "object",
-  "value": <Viewer
-    data={
-      Object {
-        "children": Array [
-          Object {
-            "content": "Content",
-            "title": "Title",
-          },
-          "Invalid item which is a string instead of an object",
-        ],
-        "title": "Title",
-      }
-    }
-  />,
+  "constructor": undefined,
+  "string": undefined,
+  "typeof": "undefined",
+  "value": undefined,
 }
 `;

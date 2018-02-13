@@ -13,8 +13,15 @@ describe('when passing data', () => {
   describe('handle invalid data', () => {
     describe('without error handler', () => invalid.forEach(({description, cases}) => {
       cases.forEach((x, i) => {
+        const fn = () =>
+          snap(renderer.create(<Subject data={x} />).toJSON())
+
+        it('throws an error', () => {
+          expect(fn).toThrow()
+        })
+
         it('throws correct error message', () => {
-          snap(() => <Subject data={x} />)
+          snap(fn)
         })
       })
     }))

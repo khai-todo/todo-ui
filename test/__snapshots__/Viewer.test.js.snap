@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`empty rendering 1`] = `<div />`;
-
 exports[`when passing data accept valid data Nested x1 1`] = `<div />`;
 
 exports[`when passing data accept valid data Nested x2 1`] = `<div />`;

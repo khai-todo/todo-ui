@@ -1,4 +1,4 @@
-import {Fragment} from 'react'
+import {id as idComp, OnlyChildrenFragment} from './lib/utils'
 
 export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
   <li>
@@ -12,14 +12,9 @@ export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
   <Children />
 </ul>
 
-export const DefaultTitleContainer = props =>
-  <span {...props} />
-
-export const DefaultContentContainer = ({children}) =>
-  <Fragment>{children}</Fragment>
-
-export const DefaultChildrenContainer = ({children}) =>
-  <Fragment>{children}</Fragment>
+export const DefaultTitleContainer = idComp('span')
+export const DefaultContentContainer = OnlyChildrenFragment.clone()
+export const DefaultChildrenContainer = OnlyChildrenFragment.clone()
 
 export const DefaultOnError = ({Error, message, details}) => {
   throw new Error(`${message} (${details})`)

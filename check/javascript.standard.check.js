@@ -1,4 +1,3 @@
-'use strict'
 import main from './lib/test-spawn'
 
 main({

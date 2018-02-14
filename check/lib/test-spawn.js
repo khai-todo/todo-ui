@@ -1,5 +1,3 @@
-'use strict'
-
 function main ({
   path = require('path'),
   childProcess: {spawnSync} = require('child_process'),

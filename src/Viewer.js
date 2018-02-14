@@ -1,5 +1,25 @@
-export const DefaultAllContainer = ({children}) =>
-  <ul />
+import {Fragment} from 'react'
+
+export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
+  <li>
+    <details>
+      <summary>
+        <Title />
+      </summary>
+      <Content />
+    </details>
+  </li>
+  <Children />
+</ul>
+
+export const DefaultTitleContainer = props =>
+  <span {...props} />
+
+export const DefaultContentContainer = ({children}) =>
+  <Fragment>{children}</Fragment>
+
+export const DefaultChildrenContainer = ({children}) =>
+  <Fragment>{children}</Fragment>
 
 export const DefaultOnError = ({Error, message, details}) => {
   throw new Error(`${message} (${details})`)
@@ -8,9 +28,9 @@ export const DefaultOnError = ({Error, message, details}) => {
 export const Viewer = ({
   data,
   AllContainer = DefaultAllContainer,
-  TitleContainer = 'div',
-  ContentContainer = 'div',
-  ChildrenContainer = 'details',
+  TitleContainer = DefaultTitleContainer,
+  ContentContainer = DefaultContentContainer,
+  ChildrenContainer = DefaultChildrenContainer,
   OnError = DefaultOnError
 }) => {
   return validate() || output()
@@ -54,7 +74,36 @@ export const Viewer = ({
   }
 
   function output () {
-    return <div />
+    const {
+      title,
+      content,
+      children
+    } = data
+
+    const Title = () => <TitleContainer>{title}</TitleContainer>
+    const Content = () => <ContentContainer>{content || null}</ContentContainer>
+
+    const Children = () => <ChildrenContainer>{
+      (Array.isArray(children) ? children : [])
+        .map(data => ({
+          data,
+          AllContainer,
+          TitleContainer,
+          ContentContainer,
+          ChildrenContainer,
+          OnError
+        }))
+        .map((props, key) => <Viewer
+          key={key}
+          {...props}
+        />)
+    }</ChildrenContainer>
+
+    return <AllContainer
+      Title={Title}
+      Content={Content}
+      Children={Children}
+    />
   }
 }
 

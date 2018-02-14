@@ -1,14 +1,206 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when passing data accept valid data Nested x1 1`] = `<div />`;
+exports[`when passing data accept valid data Nested x1 1`] = `
+<ul>
+  <li>
+    <details>
+      <summary>
+        <span>
+          Top
+        </span>
+      </summary>
+    </details>
+  </li>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Bottom 1
+          </span>
+        </summary>
+      </details>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Bottom 2
+          </span>
+        </summary>
+      </details>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Bottom 3
+          </span>
+        </summary>
+      </details>
+    </li>
+  </ul>
+</ul>
+`;
 
-exports[`when passing data accept valid data Nested x2 1`] = `<div />`;
+exports[`when passing data accept valid data Nested x2 1`] = `
+<ul>
+  <li>
+    <details>
+      <summary>
+        <span>
+          Top
+        </span>
+      </summary>
+    </details>
+  </li>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Middle 1 — Simple
+          </span>
+        </summary>
+      </details>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Middle 2 — Has content
+          </span>
+        </summary>
+        This is content of Middle 2
+      </details>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Middle 3 — Has children
+          </span>
+        </summary>
+      </details>
+    </li>
+    <ul>
+      <li>
+        <details>
+          <summary>
+            <span>
+              Bottom 3.1
+            </span>
+          </summary>
+        </details>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <details>
+          <summary>
+            <span>
+              Bottom 3.2
+            </span>
+          </summary>
+        </details>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <details>
+          <summary>
+            <span>
+              Bottom 3.3
+            </span>
+          </summary>
+        </details>
+      </li>
+    </ul>
+  </ul>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          <span>
+            Middle 4 — Has content and children
+          </span>
+        </summary>
+        This is content of Middle 4
+      </details>
+    </li>
+    <ul>
+      <li>
+        <details>
+          <summary>
+            <span>
+              Bottom 4.1
+            </span>
+          </summary>
+        </details>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <details>
+          <summary>
+            <span>
+              Bottom 4.2
+            </span>
+          </summary>
+        </details>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <details>
+          <summary>
+            <span>
+              Bottom 4.3
+            </span>
+          </summary>
+        </details>
+      </li>
+    </ul>
+  </ul>
+</ul>
+`;
 
-exports[`when passing data accept valid data Without children 1`] = `<div />`;
+exports[`when passing data accept valid data Without children 1`] = `
+<ul>
+  <li>
+    <details>
+      <summary>
+        <span>
+          Title
+        </span>
+      </summary>
+      Content
+    </details>
+  </li>
+</ul>
+`;
 
-exports[`when passing data accept valid data Without children and content 1`] = `<div />`;
-
-exports[`when passing data handle invalid data without error handler throws an error 1`] = `<div />`;
+exports[`when passing data accept valid data Without children and content 1`] = `
+<ul>
+  <li>
+    <details>
+      <summary>
+        <span>
+          Title
+        </span>
+      </summary>
+    </details>
+  </li>
+</ul>
+`;
 
 exports[`when passing data handle invalid data without error handler throws correct error message 1`] = `
 Object {
@@ -70,13 +262,8 @@ Object {
 }
 `;
 
-exports[`when passing data handle invalid data without error handler throws correct error message 11`] = `<div />`;
-
-exports[`when passing data handle invalid data without error handler throws correct error message 12`] = `
+exports[`when passing data handle invalid data without error handler throws correct error message 11`] = `
 Object {
-  "constructor": undefined,
-  "string": undefined,
-  "typeof": "undefined",
-  "value": undefined,
+  "error": [TypeError: Invalid type of data (typeof data !== 'object')],
 }
 `;

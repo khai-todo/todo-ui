@@ -1,4 +1,5 @@
-import {id as idComp, OnlyChildrenFragment} from './lib/utils'
+import {OnlyChildrenFragment} from './lib/utils'
+import {Typography} from './lib/ui/mui'
 
 export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
   <li>
@@ -12,7 +13,7 @@ export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
   <Children />
 </ul>
 
-export const DefaultTitleContainer = idComp('span')
+export const DefaultTitleContainer = Typography.clone()
 export const DefaultContentContainer = OnlyChildrenFragment.clone()
 export const DefaultChildrenContainer = OnlyChildrenFragment.clone()
 

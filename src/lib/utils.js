@@ -1,6 +1,9 @@
 import {Fragment} from 'react'
 import {mapProps} from 'recompose'
 
+export const baseProto = (base, extra = {}) =>
+  Object.assign({base, ...extra, __proto__: base})
+
 export const id = Component => {
   const ID = Object.assign(
     props => <Component {...props} />,

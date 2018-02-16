@@ -5,9 +5,7 @@ exports[`when passing data accept valid data Nested x1 1`] = `
   <li>
     <details>
       <summary>
-        <span>
-          Top
-        </span>
+        Top
       </summary>
     </details>
   </li>
@@ -15,9 +13,7 @@ exports[`when passing data accept valid data Nested x1 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Bottom 1
-          </span>
+          Bottom 1
         </summary>
       </details>
     </li>
@@ -26,9 +22,7 @@ exports[`when passing data accept valid data Nested x1 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Bottom 2
-          </span>
+          Bottom 2
         </summary>
       </details>
     </li>
@@ -37,9 +31,7 @@ exports[`when passing data accept valid data Nested x1 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Bottom 3
-          </span>
+          Bottom 3
         </summary>
       </details>
     </li>
@@ -52,9 +44,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
   <li>
     <details>
       <summary>
-        <span>
-          Top
-        </span>
+        Top
       </summary>
     </details>
   </li>
@@ -62,9 +52,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Middle 1 — Simple
-          </span>
+          Middle 1 — Simple
         </summary>
       </details>
     </li>
@@ -73,9 +61,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Middle 2 — Has content
-          </span>
+          Middle 2 — Has content
         </summary>
         This is content of Middle 2
       </details>
@@ -85,9 +71,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Middle 3 — Has children
-          </span>
+          Middle 3 — Has children
         </summary>
       </details>
     </li>
@@ -95,9 +79,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
       <li>
         <details>
           <summary>
-            <span>
-              Bottom 3.1
-            </span>
+            Bottom 3.1
           </summary>
         </details>
       </li>
@@ -106,9 +88,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
       <li>
         <details>
           <summary>
-            <span>
-              Bottom 3.2
-            </span>
+            Bottom 3.2
           </summary>
         </details>
       </li>
@@ -117,9 +97,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
       <li>
         <details>
           <summary>
-            <span>
-              Bottom 3.3
-            </span>
+            Bottom 3.3
           </summary>
         </details>
       </li>
@@ -129,9 +107,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
     <li>
       <details>
         <summary>
-          <span>
-            Middle 4 — Has content and children
-          </span>
+          Middle 4 — Has content and children
         </summary>
         This is content of Middle 4
       </details>
@@ -140,9 +116,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
       <li>
         <details>
           <summary>
-            <span>
-              Bottom 4.1
-            </span>
+            Bottom 4.1
           </summary>
         </details>
       </li>
@@ -151,9 +125,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
       <li>
         <details>
           <summary>
-            <span>
-              Bottom 4.2
-            </span>
+            Bottom 4.2
           </summary>
         </details>
       </li>
@@ -162,9 +134,7 @@ exports[`when passing data accept valid data Nested x2 1`] = `
       <li>
         <details>
           <summary>
-            <span>
-              Bottom 4.3
-            </span>
+            Bottom 4.3
           </summary>
         </details>
       </li>
@@ -178,9 +148,7 @@ exports[`when passing data accept valid data Without children 1`] = `
   <li>
     <details>
       <summary>
-        <span>
-          Title
-        </span>
+        Title
       </summary>
       Content
     </details>
@@ -193,12 +161,58 @@ exports[`when passing data accept valid data Without children and content 1`] = 
   <li>
     <details>
       <summary>
-        <span>
-          Title
-        </span>
+        Title
       </summary>
     </details>
   </li>
+</ul>
+`;
+
+exports[`when passing data handle invalid data with error handler Invalid child item Case 0: {"title":"Title","children":[{"title":"Title","content":"Content"},"Invalid item which is a string instead of an object"]} 1`] = `
+<ul>
+  <li>
+    <details>
+      <summary>
+        Title
+      </summary>
+    </details>
+  </li>
+  <ul>
+    <li>
+      <details>
+        <summary>
+          Title
+        </summary>
+        Content
+      </details>
+    </li>
+  </ul>
+  <output>
+    <p>
+      An Error occurred.
+    </p>
+    <p>
+      <code>
+        <pre>
+          
+{
+  "index": 0,
+  "subject": {
+    "title": "Title",
+    "children": [
+      {
+        "title": "Title",
+        "content": "Content"
+      },
+      "Invalid item which is a string instead of an object"
+    ]
+  }
+}
+
+        </pre>
+      </code>
+    </p>
+  </output>
 </ul>
 `;
 

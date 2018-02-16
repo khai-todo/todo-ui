@@ -1,5 +1,4 @@
 import {OnlyChildrenFragment} from './lib/utils'
-import {Typography} from './lib/ui/mui'
 
 export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
   <li>
@@ -13,7 +12,7 @@ export const DefaultAllContainer = ({Title, Content, Children}) => <ul>
   <Children />
 </ul>
 
-export const DefaultTitleContainer = Typography.clone()
+export const DefaultTitleContainer = OnlyChildrenFragment.clone()
 export const DefaultContentContainer = OnlyChildrenFragment.clone()
 export const DefaultChildrenContainer = OnlyChildrenFragment.clone()
 

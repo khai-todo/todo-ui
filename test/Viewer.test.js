@@ -26,13 +26,23 @@ describe('when passing data', () => {
       })
     }))
 
-    describe('with error handler', () => invalid.forEach(({description, cases}) => {
+    describe('with error handler', () => invalid.forEach(({description, useSnapshot, cases}) => {
       const createErrorComponent = object => () => <output>
         <p>An Error occurred.</p>
         <p><code><pre>{
           '\n' + JSON.stringify(object, undefined, 2) + '\n'
         }</pre></code></p>
       </output>
+
+      const testfn = useSnapshot
+        ? subject =>
+          snap(subject)
+        : (subject, OnError) =>
+          expect(
+            renderer.create(subject).toJSON()
+          ).toEqual(
+            renderer.create(<OnError />).toJSON()
+          )
 
       describe(description, () => cases.forEach((x, i) => {
         const OnError = createErrorComponent({
@@ -41,13 +51,7 @@ describe('when passing data', () => {
         })
 
         it(`Case ${i}: ${JSON.stringify(x)}`, () => {
-          expect(
-            renderer.create(
-              <Subject data={x} OnError={OnError} />
-            ).toJSON()
-          ).toEqual(
-            renderer.create(<OnError />).toJSON()
-          )
+          testfn(<Subject data={x} OnError={OnError} />, OnError)
         })
       }))
     }))

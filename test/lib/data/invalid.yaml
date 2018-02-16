@@ -22,6 +22,7 @@
     - title: Title
       children: 123
 - description: Invalid child item
+  useSnapshot: true # <OnError /> would be a child, won't pass equality test
   cases:
     - title: Title
       children:

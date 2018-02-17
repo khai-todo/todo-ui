@@ -22,6 +22,7 @@ export const DefaultOnError = ({Error, message, details}) => {
 
 export const Viewer = ({
   data,
+  level = 0,
   AllContainer = DefaultAllContainer,
   TitleContainer = DefaultTitleContainer,
   ContentContainer = DefaultContentContainer,
@@ -39,6 +40,7 @@ export const Viewer = ({
           Error={TypeError}
           message='Invalid type of data'
           details={details}
+          level={level}
         />
 
       if (data == null) return createTypeError('data is null or undefined')
@@ -52,6 +54,7 @@ export const Viewer = ({
           Error={Error}
           message={message}
           details={field}
+          level={level}
         />
 
       const checkMissingField = field =>
@@ -75,22 +78,29 @@ export const Viewer = ({
       children
     } = data
 
-    const Title = () => <TitleContainer>{title}</TitleContainer>
-    const Content = () => <ContentContainer>{content || null}</ContentContainer>
+    const props = {
+      level,
+      AllContainer,
+      TitleContainer,
+      ContentContainer,
+      ChildrenContainer,
+      OnError
+    }
+
+    const nextProps = {
+      ...props,
+      level: level + 1
+    }
+
+    const Title = () => <TitleContainer {...props}>{title}</TitleContainer>
+    const Content = () => <ContentContainer {...props}>{content || null}</ContentContainer>
 
     const Children = () => <ChildrenContainer>{
       (Array.isArray(children) ? children : [])
-        .map(data => ({
-          data,
-          AllContainer,
-          TitleContainer,
-          ContentContainer,
-          ChildrenContainer,
-          OnError
-        }))
-        .map((props, key) => <Viewer
+        .map((data, key) => <Viewer
           key={key}
-          {...props}
+          data={data}
+          {...nextProps}
         />)
     }</ChildrenContainer>
 
